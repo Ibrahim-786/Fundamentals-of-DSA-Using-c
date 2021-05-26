@@ -5,6 +5,7 @@
 Write your code in this editor and press "Run" button to compile and execute it.
 
 *******************************************************************************/
+//selection sort
 
 #include <iostream>
 
@@ -12,31 +13,43 @@ using namespace std;
 
 int main()
 {
-    cout<<"Hello World\n";
-
-
-  int arr[6] = {2,5,7,31,1,6};
-  
-  
- for(int i=0; i<6-1;i++){
-     
-    for(int j = i+1; j<6;j++){
-     
-     if(arr[i] > arr[j]){
-         int temp;
-         temp = arr[i];
-         arr[i] =arr[j];
-         arr[j] = temp;
-     }
-     
+   int size;
+   
+   cin>>size;
+   int arr[size];
+   
+   for(int i= 0 ; i<size; i++){
+       cin>>arr[i];
    }
+   
+   printf("before sorting\n");
+   
+      for(int i= 0 ; i<size; i++){
+       cout<<arr[i]<<" ";
+   }
+   
+   
+   for(int i= 0; i<size-1; i++){
+       for(int j = i+1; j<size; j++){
+           if(arr[i]>arr[j]){
+               int temp = arr[i];
+               arr[i] = arr[j];
+               arr[j] = temp;
+           }
+       }
+   }
+   
+   printf("\n after sorting\n");
+   
+   
+      for(int i= 0 ; i<size; i++){
+       cout<<arr[i]<<" ";
+   }
+   
+   
+   
+   
+   
 
-}
- 
- 
-      for(int i =0 ; i<6; i++){
-          printf("%d ",arr[i]);
-      }
-  
     return 0;
 }
